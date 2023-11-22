@@ -1,8 +1,7 @@
 header {
-    height: 100px;
+    height: 130px;
     padding-left: 80px;
     padding-right: 80px;
-    /* 200px in video */
     background: url('../assets/images/header-background.jpg');
     letter-spacing: 3px;
 }

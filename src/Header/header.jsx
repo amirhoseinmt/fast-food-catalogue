@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <header className='bg-size-cover bg-position-center py-4'>
         <div className="container">
-            <h4 className="text-start text-light text-uppercase">
+            <h3 className="text-start text-light text-uppercase">
                 fast food catalogue
-            </h4>
+            </h3>
         </div>
     </header>
   )
