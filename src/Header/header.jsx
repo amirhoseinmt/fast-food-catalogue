@@ -3,14 +3,14 @@ import './header.css';
 
 const Header = () => {
   return (
-    <header className='bg-size-cover bg-position-center py-3'>
+    <header className='bg-size-cover bg-position-center py-4'>
         <div className="container">
-            <h3 className="text-start text-light text-uppercase">
+            <h4 className="text-start text-light text-uppercase">
                 fast food catalogue
-            </h3>
+            </h4>
         </div>
     </header>
   )
 }
 
-export default Header
+export default Header;
