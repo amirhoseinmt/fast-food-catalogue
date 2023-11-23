@@ -17,8 +17,7 @@ const CategoryList = () => {
   }, []);
 
   const renderContent = () => {
-    if(loading)
-    {
+    if(loading){
       return <Loading theme="primary"/>
     }
     return (
