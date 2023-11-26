@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "../axios";
 import Loading from "../Loading/loading";
 
-const CategoryList = () => {
+const CategoryList = ({ filterItems }) => {
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
 
@@ -17,24 +18,34 @@ const CategoryList = () => {
   }, []);
 
   const renderContent = () => {
-    if(loading){
-      return <Loading theme="primary"/>
+    if (loading) {
+      return <Loading theme="primary" />;
     }
     return (
-      <ul className="nav">
-          <li className="nav-item">
-            <a href="#" className="nav-link mx-n2" style={{fontSize: "12px"}}>
+      <div className="ps-3 w-100 d-flex align-items-center justify-content-between gap-5">
+        <ul className="nav">
+          <li className="nav-item" onClick={() => filterItems()}>
+            <a href="#" className="nav-link mx-n2" style={{ fontSize: "12px" }}>
               همه فست فود ها
             </a>
           </li>
-          {categories.map((category) => (
-            <li className="nav-item" key={category.id}>
-              <a href="#" className="nav-link mx-n2" style={{fontSize: "12px"}}>
+          {categories.map((category) => ( //dosent work
+            <li
+              className="nav-item"
+              key={category.id}
+              onClick={() => filterItems(category.id)}
+            >
+              <a
+                href="#"
+                className="nav-link mx-n2"
+                style={{ fontSize: "12px" }}
+              >
                 {category.name}
               </a>
             </li>
           ))}
         </ul>
+      </div>
     );
   };
 

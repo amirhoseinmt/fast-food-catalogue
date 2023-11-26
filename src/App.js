@@ -13,7 +13,7 @@ function App() {
   const fetchData = async (categoryId = null) => {
     setLoading(true);
     const response = await axios.get(
-      `/FastFood/list/${categoryId ? "?categoryId=" : ""}`
+      `/FastFood/list/${categoryId ? "?categoryId=" + categoryId : ""}`
     );
     setLoading(false);
     setFastFood(response.data);
@@ -22,6 +22,10 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const filterItems = (categoryId) => {
+    fetchData(categoryId);
+  }
 
   const renderContent = () => {
     if (loading) {
@@ -33,7 +37,7 @@ function App() {
   return (
     <div className="wrapper bg-faded-dark">
       <Header></Header>
-      <CategoryList></CategoryList>
+      <CategoryList filterItems={filterItems}></CategoryList>
       <div className="container mt-4">{renderContent()}</div>
     </div>
   );
