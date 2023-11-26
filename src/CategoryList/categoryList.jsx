@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import axios from "../axios";
 import Loading from "../Loading/loading";
+import SearchBar from "../SearchBar/searchBar";
 
-const CategoryList = ({ filterItems }) => {
+const CategoryList = ({ filterItems, children }) => {
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
 
@@ -29,7 +29,7 @@ const CategoryList = ({ filterItems }) => {
               همه فست فود ها
             </a>
           </li>
-          {categories.map((category) => ( //dosent work
+          {categories.map((category) => ( 
             <li
               className="nav-item"
               key={category.id}
@@ -45,6 +45,7 @@ const CategoryList = ({ filterItems }) => {
             </li>
           ))}
         </ul>
+        {children}
       </div>
     );
   };
