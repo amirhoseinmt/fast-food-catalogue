@@ -57,7 +57,7 @@ function App() {
             برای واژه فوق آیتمی یافت نشد
           </div>
           <img
-            className="mx-auto mt-2 d-block"
+            className="mx-auto mt-2 d-block fade-in-horiz"
             src={notFound}
             style={{
               height: "auto",

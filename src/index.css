@@ -1,3 +1,7 @@
+body {
+    overflow-y: scroll;
+}
+
 @keyframes fadeInHoriz {
     0% {
         opacity: 0;
